@@ -6,8 +6,8 @@ from scipy.linalg import solve
 from scipy.stats import truncnorm
 import matplotlib.font_manager as fm
 
-font_path = '/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc'
-font_prop = fm.FontProperties(fname=font_path)
+#font_path = '/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc'
+#font_prop = fm.FontProperties(fname=font_path)
 
 # 固定パラメータ
 dx = dy = 1 
