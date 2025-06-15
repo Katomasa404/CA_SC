@@ -1,12 +1,11 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib
 from matplotlib.colors import Normalize
 from scipy.linalg import solve
 from scipy.stats import truncnorm
 
-matplotlib.rcParams['font.family'] = 'Noto Sans CJK JP'
+plt.rcParams['font.family'] = ['Yu Gothic', 'Meiryo', 'sans-serif']
 
 # 固定パラメータ
 dx = dy = 1 
