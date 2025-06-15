@@ -10,10 +10,10 @@ plt.rcParams['font.family'] = ['sans-serif']
 # 固定パラメータ
 dx = dy = 1 
 dt = 0.0005 
-Nt = 10000  
+Nt = 10  
 border = 1
 VacantSpace = 1
-N = 31
+N = 25
 Organism = 1
 mean = 2.21
 std = 0.96
