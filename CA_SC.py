@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
+import matplotlib
 from matplotlib.colors import Normalize
 from scipy.linalg import solve
 from scipy.stats import truncnorm
