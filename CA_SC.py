@@ -110,7 +110,7 @@ def run_simulation(D, Nutrition):
     for t in range(Nt):
         data[0] = adi_step_periodic(data[0], D, dt, dx, dy)
         if t % frame_interval == 0:
-           if t % (frame_interval*50) == 0:
+           if t % (frame_interval*40) == 0:
               fig, ax = plt.subplots(figsize=(3, 3))
               ax.imshow(data[0], cmap='gray_r', norm=norm1)
               ax.imshow(data[1], cmap='Reds', alpha=0.5, norm=norm2)
