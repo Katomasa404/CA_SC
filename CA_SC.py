@@ -6,8 +6,7 @@ from matplotlib.colors import Normalize
 from scipy.linalg import solve
 from scipy.stats import truncnorm
 
-font_path = "/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc"
-font_prop = fm.FontProperties(fname=font_path)
+matplotlib.rcParams['font.family'] = 'Noto Sans CJK JP'
 
 # 固定パラメータ
 dx = dy = 1 
@@ -117,8 +116,8 @@ def run_simulation(D, Nutrition):
               fig, ax = plt.subplots(figsize=(3, 3))
               ax.imshow(data[0], cmap='gray_r', norm=norm1)
               ax.imshow(data[1], cmap='Reds', alpha=0.5, norm=norm2)
-              ax.text(5, -1, '赤色：細菌（さいきん）', fontsize=8, fontproperties=font_prop)
-              ax.text(15, -1, 'グレー：栄養（えいよう）', fontsize=8, fontproperties=font_prop)
+              ax.text(5, -1, '赤色：細菌（さいきん）', fontsize=8)
+              ax.text(15, -1, 'グレー：栄養（えいよう）', fontsize=8)
               ax.axis("off")
               frames.append(fig)
            data, lag_timer = ingredient(data, lag_timer)
@@ -136,7 +135,7 @@ def main():
         st.session_state.frames = None
 
     if st.button("シミュレーション スタート!"):
-        st.info("シミュレーション中...、ちょっと待ってね")
+        st.info("シミュレーション中...ちょっと待ってね")
         frames = run_simulation(D, Nutrition)
         st.session_state.frames = frames
         st.success("細菌（さいきん）はこんなふうにふえるよ↓")
