@@ -1,4 +1,4 @@
-altair @ file:///home/conda/feedstock_root/build_artifacts/altair-split_1734244716962/work
+altair==5.2.0
 anyio @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_d9l4uro_qv/croot/anyio_1745334654441/work
 appnope @ file:///Users/ktietz/demo/mc3/conda-bld/appnope_1629146036738/work
 argh @ file:///home/conda/feedstock_root/build_artifacts/argh_1736349233934/work
