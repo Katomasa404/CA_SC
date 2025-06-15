@@ -9,7 +9,7 @@ import matplotlib.font_manager as fm
 # 固定パラメータ
 dx = dy = 1 
 dt = 0.0005 
-Nt = 8000
+Nt = 7501
 border = 1
 VacantSpace = 1
 N = 25
@@ -110,7 +110,7 @@ def run_simulation(D, Nutrition):
     for t in range(Nt):
         data[0] = adi_step_periodic(data[0], D, dt, dx, dy)
         if t % frame_interval == 0:
-           if t % (frame_interval*80) == 0:
+           if t % (frame_interval*75) == 0:
               fig, ax = plt.subplots(figsize=(3, 3))
               ax.imshow(data[0], cmap='gray_r', norm=norm1)
               ax.imshow(data[1], cmap='Reds', alpha=0.5, norm=norm2)
@@ -124,7 +124,7 @@ def main():
     # 対数スケールの値をリストで作成
     D_values = [0, 0.1, 0.5, 1, 5, 10, 50, 100, 500, 1000]
     D = st.select_slider('栄養（えいよう）の広がりやすさ', options=D_values, value=D_values[3])
-    Nutrition_values = list(range(0, 1001, 50))
+    Nutrition_values = list(range(0, 801, 50))
     Nutrition = st.select_slider("栄養（えいよう）の量（りょう）", options=Nutrition_values, value=Nutrition_values[10])
 
     if "frames" not in st.session_state:
