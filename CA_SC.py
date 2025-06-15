@@ -5,7 +5,8 @@ from matplotlib.colors import Normalize
 from scipy.linalg import solve
 from scipy.stats import truncnorm
 
-plt.rcParams['font.family'] = 'sans-serif'
+#plt.rcParams['font.family'] = 'sans-serif'
+plt.rcParams['font.family'] = 'YuGothic'
 
 # 固定パラメータ
 dx = dy = 1 
