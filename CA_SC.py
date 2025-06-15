@@ -9,7 +9,7 @@ import matplotlib.font_manager as fm
 # 固定パラメータ
 dx = dy = 1 
 dt = 0.0005 
-Nt = 1000  
+Nt = 10000
 border = 1
 VacantSpace = 1
 N = 25
@@ -137,7 +137,7 @@ def main():
 
     if st.session_state.frames:
         step = st.slider("フレーム", 0, len(st.session_state.frames) - 1, 0)
-        st.success("↓細菌（さいきん、赤色）は、栄養（えいよう、グレー）を食べて、こんなふうにふえるよ↓")
+        st.success("細菌（さいきん、赤色）は、栄養（えいよう、グレー）を食べて、こんなふうにふえるよ↓")
         st.pyplot(st.session_state.frames[step], use_container_width=False)
 
 if __name__ == "__main__":
