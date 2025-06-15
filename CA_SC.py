@@ -12,7 +12,7 @@ font_prop = fm.FontProperties(fname=font_path)
 # 固定パラメータ
 dx = dy = 1 
 dt = 0.0005 
-Nt = 10000  # ステップ数（短めに）
+Nt = 10000  
 border = 1
 VacantSpace = 1
 N = 31
@@ -117,29 +117,29 @@ def run_simulation(D, Nutrition):
               fig, ax = plt.subplots(figsize=(3, 3))
               ax.imshow(data[0], cmap='gray_r', norm=norm1)
               ax.imshow(data[1], cmap='Reds', alpha=0.5, norm=norm2)
-              ax.text(5, -1, '赤色：菌', fontsize=8, fontproperties=font_prop)
-              ax.text(15, -1, 'グレー：栄養', fontsize=8, fontproperties=font_prop)
+              ax.text(5, -1, '赤色：細菌（さいきん）', fontsize=8, fontproperties=font_prop)
+              ax.text(15, -1, 'グレー：栄養（えいよう）', fontsize=8, fontproperties=font_prop)
               ax.axis("off")
               frames.append(fig)
            data, lag_timer = ingredient(data, lag_timer)
     return frames
 
 def main():
-    st.title("菌が増える様子を見てみよう")
+    st.title("細菌（さいきん）がふえる様子を見てみよう！")
     # 対数スケールの値をリストで作成
     D_values = [0, 0.1, 0.5, 1, 5, 10, 50, 100, 500, 1000]
-    D = st.select_slider('栄養の広がりやすさ', options=D_values, value=D_values[3])
+    D = st.select_slider('栄養（えいよう）の広がりやすさ', options=D_values, value=D_values[3])
     Nutrition_values = list(range(0, 1001, 50))
-    Nutrition = st.select_slider("栄養の量", options=Nutrition_values, value=Nutrition_values[10])
+    Nutrition = st.select_slider("栄養（えいよう）の量（りょう）", options=Nutrition_values, value=Nutrition_values[10])
 
     if "frames" not in st.session_state:
         st.session_state.frames = None
 
-    if st.button("シミュレーション スタート"):
-        st.info("シミュレーション実行中...")
+    if st.button("シミュレーション スタート!"):
+        st.info("シミュレーション中...、ちょっと待ってね")
         frames = run_simulation(D, Nutrition)
         st.session_state.frames = frames
-        st.success("シミュレーション 終わり")
+        st.success("細菌（さいきん）はこんなふうにふえるよ↓")
 
     if st.session_state.frames:
         step = st.slider("フレーム", 0, len(st.session_state.frames) - 1, 0)
