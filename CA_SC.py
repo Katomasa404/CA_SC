@@ -9,7 +9,7 @@ import matplotlib.font_manager as fm
 # 固定パラメータ
 dx = dy = 1 
 dt = 0.0005 
-Nt = 10000
+Nt = 8000
 border = 1
 VacantSpace = 1
 N = 25
