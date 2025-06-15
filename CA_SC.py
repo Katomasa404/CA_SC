@@ -6,9 +6,6 @@ from scipy.linalg import solve
 from scipy.stats import truncnorm
 import matplotlib.font_manager as fm
 
-#font_path = '/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc'
-#font_prop = fm.FontProperties(fname=font_path)
-
 # 固定パラメータ
 dx = dy = 1 
 dt = 0.0005 
@@ -117,8 +114,6 @@ def run_simulation(D, Nutrition):
               fig, ax = plt.subplots(figsize=(3, 3))
               ax.imshow(data[0], cmap='gray_r', norm=norm1)
               ax.imshow(data[1], cmap='Reds', alpha=0.5, norm=norm2)
-              #ax.text(5, -1, '赤色：細菌（さいきん）', fontsize=8, fontproperties=font_prop)
-              #ax.text(15, -1, 'グレー：栄養（えいよう）', fontsize=8, fontproperties=font_prop)
               ax.axis("off")
               frames.append(fig)
            data, lag_timer = ingredient(data, lag_timer)
@@ -139,10 +134,10 @@ def main():
         st.info("シミュレーション中...ちょっと待ってね")
         frames = run_simulation(D, Nutrition)
         st.session_state.frames = frames
-        st.success("細菌（さいきん）はこんなふうにふえるよ↓")
 
     if st.session_state.frames:
         step = st.slider("フレーム", 0, len(st.session_state.frames) - 1, 0)
+        st.success("↓細菌（さいきん、赤色）は、栄養（えいよう、グレー）を食べて、こんなふうにふえるよ↓")
         st.pyplot(st.session_state.frames[step], use_container_width=False)
 
 if __name__ == "__main__":
