@@ -125,7 +125,7 @@ def main():
     D_values = [0, 0.1, 0.5, 1, 5, 10, 50, 100, 500, 1000]
     D = st.select_slider('栄養（えいよう）の広がりやすさ', options=D_values, value=D_values[3])
     Nutrition_values = list(range(0, 801, 50))
-    Nutrition = st.select_slider("栄養（えいよう）の量（りょう）", options=Nutrition_values, value=Nutrition_values[10])
+    Nutrition = st.select_slider("栄養（えいよう）の量（りょう）", options=Nutrition_values, value=Nutrition_values[8])
 
     if "frames" not in st.session_state:
         st.session_state.frames = None
