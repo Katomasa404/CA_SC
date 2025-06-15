@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import Normalize
 from scipy.linalg import solve
 from scipy.stats import truncnorm
+import matplotlib.font_manager as fm
 
 font_path = '/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc'
 font_prop = fm.FontProperties(fname=font_path)
